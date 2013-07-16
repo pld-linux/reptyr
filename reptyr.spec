@@ -1,16 +1,12 @@
-
-%define	rel	0.1
-%define	subver	2011.02.03
-
 Summary:	A tool for "re-ptying" programs
 Summary(pl.UTF-8):	Narzędzie do "re-ptyjowania" programów
 Name:		reptyr
-Version:	0
-Release:	0.%{subver}.%{rel}
+Version:	0.5
+Release:	1
 License:	BSD-like
 Group:		Applications
-Source0:	https://github.com/nelhage/reptyr/tarball/master/%{name}-%{subver}.tar.gz
-# Source0-md5:	2b48b412a654e8c22ad53a6349c6b0a1
+Source0:	https://github.com/nelhage/reptyr/archive/%{name}-%{version}.tar.gz
+# Source0-md5:	92307c20bbcfad83eff4a369bc7f41d1
 URL:		https://github.com/nelhage/reptyr
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -22,11 +18,12 @@ screen, use reptyr to grab it, and then kill the ssh session and head
 on home.
 
 %prep
-%setup -q -c -n %{name}-%{subver}
-mv nelhage-reptyr-*/* .
+%setup -q -n %{name}-%{name}-%{version}
 
 %build
 %{__make} \
+	CC="%{__cc}" \
+	CPPFLAGS="%{rpmcppflags}" \
 	CFLAGS="%{rpmcflags}" \
 	LDFLAGS="%{rpmldflags}"
 
@@ -41,5 +38,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc BUGS NOTES README
+%doc ChangeLog NOTES README.md
 %attr(755,root,root) %{_bindir}/reptyr
+%{_mandir}/man1/reptyr.1*
+%lang(fr) %{_mandir}/fr/man1/reptyr.1*
