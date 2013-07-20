@@ -1,5 +1,5 @@
 Summary:	A tool for "re-ptying" programs
-Summary(pl.UTF-8):	Narzędzie do "re-ptyjowania" programów
+Summary(pl.UTF-8):	Narzędzie do przepinania programów do nowego terminala (re-pty)
 Name:		reptyr
 Version:	0.5
 Release:	1
@@ -16,6 +16,14 @@ attaching it to a new terminal. Started a long-running process over
 ssh, but have to leave and don't want to interrupt it? Just start a
 screen, use reptyr to grab it, and then kill the ssh session and head
 on home.
+
+%description -l pl.UTF-8
+reptyr to narzędzie służące do podłączania już działającego programu
+do nowego terminala. Jest to pomocne szczególnie w przypadku
+uruchomienia długo trwającego procesu po ssh, kiedy zachodzi potrzeba
+rozłączenia się bez przerywania programu - wystarczy uruchomić
+screena, użyć reptyra do przechwycenia programu, a następnie zabić
+sesję ssh.
 
 %prep
 %setup -q -n %{name}-%{name}-%{version}
