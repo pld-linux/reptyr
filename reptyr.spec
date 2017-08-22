@@ -1,12 +1,16 @@
+# TODO
+# - package /usr/share/bash-completion/completions/reptyr
 Summary:	A tool for "re-ptying" programs
 Summary(pl.UTF-8):	Narzędzie do przepinania programów do nowego terminala (re-pty)
 Name:		reptyr
-Version:	0.5
+Version:	0.6.2
 Release:	1
 License:	BSD-like
 Group:		Applications
 Source0:	https://github.com/nelhage/reptyr/archive/%{name}-%{version}.tar.gz
-# Source0-md5:	92307c20bbcfad83eff4a369bc7f41d1
+# Source0-md5:	9beb26462407f229c9e900466dc25b56
+Patch0:		https://github.com/nelhage/reptyr/compare/%{name}-%{version}...master.diff
+# Patch0-md5:	a8fba19745c20d18de4802001c15dfbd
 URL:		https://github.com/nelhage/reptyr
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -27,6 +31,7 @@ sesję ssh.
 
 %prep
 %setup -q -n %{name}-%{name}-%{version}
+%patch0 -p1
 
 %build
 %{__make} \
