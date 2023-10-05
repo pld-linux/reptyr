@@ -3,14 +3,14 @@
 Summary:	A tool for "re-ptying" programs
 Summary(pl.UTF-8):	Narzędzie do przepinania programów do nowego terminala (re-pty)
 Name:		reptyr
-Version:	0.6.2
+Version:	0.10.0
 Release:	1
 License:	BSD-like
 Group:		Applications
 Source0:	https://github.com/nelhage/reptyr/archive/%{name}-%{version}.tar.gz
-# Source0-md5:	9beb26462407f229c9e900466dc25b56
+# Source0-md5:	6418ef71c4352350edbf3274330896ee
 Patch0:		https://github.com/nelhage/reptyr/compare/%{name}-%{version}...master.diff
-# Patch0-md5:	a8fba19745c20d18de4802001c15dfbd
+# Patch0-md5:	bf3abf2a8887237c07b17d50b8eb0d6f
 URL:		https://github.com/nelhage/reptyr
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
